@@ -1,5 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
+// undoable: 用于给 reducer 增加 undo 功能
+// excludeAction: 用于排除某些 action 不参与 undo
+// SateWithHistory 类型: 用于包装 reducer 的 state，增加 undo 功能
 import undoable, { excludeAction, StateWithHistory } from 'redux-undo'
+// 
 import userReducer, { UserStateType } from './userReducer'
 import componentsReducer, { ComponentsStateType } from './componentsReducer'
 import pageInfoReducer, { PageInfoType } from './pageInfoReducer'

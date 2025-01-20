@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+// Outlet的作用是渲染父路由的子路由
 import { Outlet } from 'react-router-dom'
 import { Layout, Spin } from 'antd'
 import Logo from '../components/Logo'

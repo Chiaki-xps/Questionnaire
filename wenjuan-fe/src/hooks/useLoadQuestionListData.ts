@@ -1,4 +1,6 @@
+// useSearchParams 用于获取 URL 中的查询参数
 import { useSearchParams } from 'react-router-dom'
+// useRequest 用于发送请求
 import { useRequest } from 'ahooks'
 import { getQuestionListService } from '../services/question'
 import {
@@ -13,6 +15,7 @@ type OptionType = {
   isDeleted: boolean
 }
 
+// 获取问题列表数据
 function useLoadQuestionListData(opt: Partial<OptionType> = {}) {
   const { isStar, isDeleted } = opt
   const [searchParams] = useSearchParams()
