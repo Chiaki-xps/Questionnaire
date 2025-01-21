@@ -1,3 +1,4 @@
+// createSlice 会自动创建 action 和 reducer
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type UserStateType = {
