@@ -32,6 +32,7 @@ export function getNextSelectedId(fe_id: string, componentList: ComponentInfoTyp
 
 /**
  * 插入新组件
+ * 根据 selectedId 找到这个组件，在下面插入组件
  * @param draft state draft
  * @param newComponent 新组件
  */

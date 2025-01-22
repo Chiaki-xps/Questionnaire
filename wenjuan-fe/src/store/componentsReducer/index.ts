@@ -1,8 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+// immer: 用于修改 state
+// produce: 用于修改 sta
 import produce from 'immer'
 import cloneDeep from 'lodash.clonedeep'
+// nanoid: 用于生成随机 id
 import { nanoid } from 'nanoid'
+// dnd-kit/sortable: 用于拖拽排序
+// arrayMove: 用于移动数组元素
 import { arrayMove } from '@dnd-kit/sortable'
+
+// 联合类型，包含所有组件的属性
 import { ComponentPropsType } from '../../components/QuestionComponents'
 import { getNextSelectedId, insertNewComponent } from './utils'
 
@@ -33,6 +40,9 @@ export const componentsSlice = createSlice({
   reducers: {
     // 重置所有组件
     resetComponents: (state: ComponentsStateType, action: PayloadAction<ComponentsStateType>) => {
+      console.log('🚀 ~ action:', action)
+      // action中payload属性是传入参数
+      // action中type属性：/components/resetComponents
       return action.payload
     },
 
