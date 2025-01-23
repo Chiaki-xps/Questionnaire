@@ -1,3 +1,4 @@
+// markRead
 import { configureStore } from '@reduxjs/toolkit'
 // edux-undo：用于撤销和重做、取消
 // undoable: 用于给 reducer 增加 undo 功能

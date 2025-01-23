@@ -1,3 +1,6 @@
+// markRead: resetComponents
+// 用于管理组件的状态
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // immer: 用于修改 state
 // produce: 用于修改 sta

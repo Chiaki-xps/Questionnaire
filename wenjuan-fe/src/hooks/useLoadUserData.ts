@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useRequest } from 'ahooks'
 import { useDispatch } from 'react-redux'
 import useGetUserInfo from './useGetUserInfo'
@@ -9,11 +10,13 @@ function useLoadUserData() {
   const dispatch = useDispatch()
   const [waitingUserData, setWaitingUserData] = useState(true)
 
-  // ajax 加载用户信息
+  // 获取用户信息
   const { run } = useRequest(getUserInfoService, {
+    // manual 表示手动触发，true 表示不会自动触发
     manual: true,
     onSuccess(result) {
       const { username, nickname } = result
+      console.log('🚀 ~ onSuccess ~ result:', result)
       dispatch(loginReducer({ username, nickname })) // 存储到 redux store
     },
     onFinally() {

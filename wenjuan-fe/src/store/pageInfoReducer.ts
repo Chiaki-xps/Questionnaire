@@ -1,3 +1,4 @@
+// markRead
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import produce from 'immer'
 
@@ -20,6 +21,7 @@ const pageInfoSlice = createSlice({
   name: 'pageInfo',
   initialState: INIT_STATE,
   reducers: {
+    // 重置页面信息
     resetPageInfo: (state: PageInfoType, action: PayloadAction<PageInfoType>) => {
       return action.payload
     },

@@ -1,3 +1,5 @@
+// markRead
+// 获取用户信息
 import { useSelector } from 'react-redux'
 import { StateType } from '../store'
 import { UserStateType } from '../store/userReducer'

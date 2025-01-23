@@ -1,3 +1,5 @@
+// markRead
+// 当路由为 / 时，渲染 MainLayout 组件，通过 Outlet 组件渲染父路由的子路由
 import React, { FC } from 'react'
 // Outlet的作用是渲染父路由的子路由
 import { Outlet } from 'react-router-dom'
@@ -16,28 +18,31 @@ const MainLayout: FC = () => {
   useNavPage(waitingUserData)
 
   return (
-    <Layout>
-      <Header className={styles.header}>
-        <div className={styles.left}>
-          <Logo />
-        </div>
-        <div className={styles.right}>
-          <UserInfo />
-        </div>
-      </Header>
-      <Layout className={styles.main}>
-        <Content>
-          {waitingUserData ? (
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <Spin />
-            </div>
-          ) : (
-            <Outlet />
-          )}
-        </Content>
+    <div className="MainLayout">
+      <Layout>
+        <Header className={styles.header}>
+          <div className={styles.left}>
+            <Logo />
+          </div>
+          <div className={styles.right}>
+            <UserInfo />
+          </div>
+        </Header>
+        <Layout className={styles.main}>
+          <Content>
+            {waitingUserData ? (
+              <div style={{ textAlign: 'center', marginTop: '60px' }}>
+                <Spin />
+              </div>
+            ) : (
+              // 渲染父路由的子路由
+              <Outlet />
+            )}
+          </Content>
+        </Layout>
+        <Footer className={styles.footer}>小慕问卷 &copy;2023 - present. Created by wzs</Footer>
       </Layout>
-      <Footer className={styles.footer}>小慕问卷 &copy;2023 - present. Created by wzs</Footer>
-    </Layout>
+    </div>
   )
 }
 

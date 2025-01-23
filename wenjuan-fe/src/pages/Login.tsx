@@ -46,14 +46,16 @@ const Login: FC = () => {
       return data
     },
     {
+      // manual表示手动触发
       manual: true,
       // debounceWait: 500,
       onSuccess(result) {
+        console.log('🚀 ~ onSuccess ~ result:', result)
         const { token = '' } = result
         setToken(token) // 存储 token
 
         message.success('登录成功')
-        nav(MANAGE_INDEX_PATHNAME) // 导航到“我的问卷”
+        console.log('🚀 ~ onSuccess ~ 登录成功:')
       },
     }
   )
@@ -65,6 +67,7 @@ const Login: FC = () => {
 
     if (remember) {
       rememberUser(username, password)
+      nav(MANAGE_INDEX_PATHNAME) // 导航到“我的问卷”
     } else {
       deleteUserFromStorage()
     }
