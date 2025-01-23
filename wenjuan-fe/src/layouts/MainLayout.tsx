@@ -15,6 +15,8 @@ const { Header, Content, Footer } = Layout
 
 const MainLayout: FC = () => {
   const { waitingUserData } = useLoadUserData()
+  // Tip: 为什么退出登陆之后，又回到问券页面
+  // 因为每次username发生变化之后，
   useNavPage(waitingUserData)
 
   return (

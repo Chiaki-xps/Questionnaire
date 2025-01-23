@@ -19,6 +19,7 @@ const Logo: FC = () => {
   const { username } = useGetUserInfo()
 
   const [pathname, setPathname] = useState(HOME_PATHNAME)
+
   useEffect(() => {
     if (username) {
       setPathname(MANAGE_INDEX_PATHNAME)
